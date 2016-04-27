@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather</title>
+
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>Weather Forecast <small>5 day / 3 hour</small></h1>
+    </div>
+  </div>
+  <!-- /.container -->
+
+  <div class="container">
+    <div class="panel panel-info">
+      <header class="panel-heading">
+        <h3 class="panel-title">Location</h3>
+      </header>
+      <div class="panel-body">
+        City: <strong>CITYNAME</strong> - Country: <strong>COUNTRYNAME</strong>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <img src="http://placehold.it/200x200" alt="Wheather Icon">
+          <div class="caption">
+            <strong>DATETIME</strong>
+            <ul class="list-group">
+              <li class="list-group-item">10&deg;C - 15&deg;C</li>
+              <li class="list-group-item">CLOUDS</li>
+              <li class="list-group-item">WIND SPEED</li>
+              <li class="list-group-item">RAIN VOLUMN</li>
+              <li class="list-group-item">PRESSURE</li>
+              <li class="list-group-item">SEA_LEVEL</li>
+              <li class="list-group-item">GRND_LEVEL</li>
+              <li class="list-group-item">HUMIDITY</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+
+  <script src="dist/all.js"></script>
+</body>
+</html>
