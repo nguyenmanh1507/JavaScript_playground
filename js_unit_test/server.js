@@ -1,10 +1,11 @@
 const express = require('express')
 const app = express()
+const getPalette = require('./lib/getPalette')
 
 app.set('view engine', 'jade')
 
 app.get('/', (req, res) => {
-  res.render('index', {palette: ['#cc7790', '#ff5512', '#75d709']})
+  res.render('index', {palette: getPalette()})
 })
 
 app.listen(3333)
