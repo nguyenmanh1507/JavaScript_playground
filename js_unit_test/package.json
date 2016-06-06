@@ -1,0 +1,23 @@
+{
+  "name": "js_unit_test",
+  "version": "1.0.0",
+  "description": "[Tutsplus Course](https://code.tutsplus.com/courses/javascript-unit-testing-with-mocha-chai-and-sinon/lessons/getting-started)",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "?.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.13.4",
+    "gulp": "^3.9.1",
+    "jade": "^1.11.0"
+  }
+}
