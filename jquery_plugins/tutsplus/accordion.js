@@ -1,37 +1,63 @@
 (function($) {
 
-  $.fn.accordion = function(options) {
+  const methods = {
+    init: function(options) {
+      const settings = $.extend({}, $.fn.accordion.defaults, options);
 
-    const settings = $.extend({}, $.fn.accordion.defaults, options);
+      this.find('h3')
+        .addClass('accordion-header')
+        .next()
+        .addClass('accordion-panel')
+        .slideUp()
+      ;
 
-    this.find('h3')
-      .addClass('accordion-header')
-      .next()
-      .addClass('accordion-panel')
-      .slideUp()
-    ;
+      const $this = this;
 
-    const $this = this;
+      this.on('click', '.accordion-header', function(e) {
+        const next = $(e.target).next();
+        let isActive = next.attr('data-active');
 
-    this.on('click', '.accordion-header', function(e) {
-      const next = $(e.target).next();
-      let isActive = next.attr('data-active');
+        if (settings.distinct) {
+          $this.find('[data-active]')
+            .removeAttr('data-active')
+            .slideToggle();
 
-      if (settings.distinct) {
-        $this.find('[data-active]')
-          .removeAttr('data-active')
+            if (isActive) {
+              return;
+            }
+        }
+
+        next.attr('data-active', true)
           .slideToggle();
+      });
 
-          if (isActive) {
-            return;
-          }
-      }
+      return this;
+    },
+    expand: function() {
+      this.find('.accordion-panel')
+        .attr('data-active', true)
+        .slideDown()
+      ;
 
-      next.attr('data-active', true)
-        .slideToggle();
-    });
+      return this;
+    },
+    collapse: function() {
+      this.find('[data-active]')
+        .removeAttr('data-active')
+        .slideUp()
+      ;
 
-    return this;
+      return this;
+    }
+  }
+
+  $.fn.accordion = function(options) {
+    if (methods[options]) {
+      return methods[options].call(this);
+    }
+
+    return methods.init.call(this, options);
+
   };
 
   $.fn.accordion.defaults = {
