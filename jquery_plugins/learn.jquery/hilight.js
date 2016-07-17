@@ -7,7 +7,7 @@
     let markup = elem.html();
     markup = $.fn.hilight.format(markup);
     elem.html(markup);
-    
+
     return this.css({
       color: opts.foreground,
       background: opts.background
@@ -22,5 +22,11 @@
     foreground: '#f00',
     background: '#ff0'
   };
+
+  function debug(obj) {
+    if (window.console && window.console.log) {
+      console.log(`Hilight section count: ${obj.length}`);
+    }
+  }
 
 }(jQuery))
