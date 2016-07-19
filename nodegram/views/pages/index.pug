@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+head
+  include ../partials/head.pug
+body
+  include ../partials/header.pug
+  
+  .row
+    each gram in grams
+      - var link = gram.link
+      - var avatar = gram.images.standard_resolution.url
+      .small-6.medium-3.column
+        a(href=link, target="_blank")
+          img.thumbnail(src=avatar, alt="")
+      
+  
+  include ../partials/footer.pug
+  
+  script(src="js/app.js")
