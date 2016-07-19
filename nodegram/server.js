@@ -3,6 +3,9 @@ const app = express()
 
 app.use(express.static(__dirname))
 
+// set template engine
+app.use('view engine', 'pug')
+
 app.get('/', (req, res) => {
   res.sendFile('index.html')
 })
