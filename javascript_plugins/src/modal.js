@@ -1,5 +1,5 @@
 ;(function() {
-
+console.log(this);
   // define constructor
   this.Modal = function(options = {}) {
 
