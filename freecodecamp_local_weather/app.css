@@ -1,0 +1,25 @@
+body {
+  color: #FFF;
+  font-family: 'Droid Serif', serif;
+  background: #72C267;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Bungee Inline', cursive;
+}
+
+.site-header {
+  padding: 1rem;
+
+  color: #FFF;
+  background: #005DAA;
+}
+
+.site-heading {
+  margin: 0;
+}

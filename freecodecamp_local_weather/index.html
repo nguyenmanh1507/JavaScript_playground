@@ -5,20 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Freecodecamp Local Weather</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Droid+Serif" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
 </head>
 <body>
-
+  <header class="site-header">
+    <div class="row">
+      <div class="small-12 column">
+        <h1 class="site-heading">Local Weather</h1>
+      </div>
+    </div>
+  </header>
   <div class="row">
     <div class="small-12 column">
-      <h1>Local Weather</h1>
       <p><strong id="location"></strong></p>
       <img src="" id="weatherIcon">
       <p id="temp"></p>
 
       <div class="switch">
-        <input class="switch-input" id="exampleRadioSwitch1" type="checkbox" name="testGroup">
-        <label class="switch-paddle" for="exampleRadioSwitch1">
-          <span class="show-for-sr">Bulbasaur</span>
+        <input class="switch-input" id="switchInput" type="checkbox" name="testGroup">
+        <label class="switch-paddle" for="switchInput">
+          <span class="show-for-sr">Switch to F degree</span>
         </label>
       </div>
 

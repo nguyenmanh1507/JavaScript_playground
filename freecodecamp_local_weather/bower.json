@@ -1,0 +1,18 @@
+{
+  "name": "freecodecamp_local_weather",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "ngmanh <nguyenmanh1507@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/nguyenmanh1507/JavaScript_playground",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}

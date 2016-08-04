@@ -22,12 +22,19 @@
     const url         = source + params
 
     $.getJSON(url, function(data){
-      const src          = getWeatherIcon(data.weather[0].main)
-      const tempValue    = Math.floor(data.main.temp)
+      const src         = getWeatherIcon(data.weather[0].main)
+      const tempValue   = Math.floor(data.main.temp)
+      const switchInput = document.getElementById('switchInput')
 
       location.innerHTML = data.name
       weatherIcon.setAttribute('src', src)
-      temp.innerHTML     = tempValue
+      temp.innerHTML     = `${tempValue} &#8451;`
+
+      switchInput.addEventListener('change', function() {
+        temp.innerHTML = (switchInput.checked)
+          ? `${celsiusToFahrenheit(tempValue)} &#8457;`
+          : `${tempValue} &#8451;`
+      })
     }).fail(function() {
       console.log('API Fail')
     })
@@ -46,6 +53,10 @@
     }
 
     return ListIcons[weather] || 'images/cloud.svg'
+  }
+
+  function celsiusToFahrenheit(cDegree) {
+    return cDegree * 1.8 + 32
   }
 
   navigator.geolocation.getCurrentPosition(success, error)
