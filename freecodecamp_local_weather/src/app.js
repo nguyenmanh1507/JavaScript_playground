@@ -8,6 +8,7 @@
   function success(position) {
     const location    = document.getElementById('location')
     const weatherIcon = document.getElementById('weatherIcon')
+    const description = document.getElementById('description')
     const temp        = document.getElementById('temp')
 
     const latitude    = position.coords.latitude
@@ -22,13 +23,15 @@
     const url         = source + params
 
     $.getJSON(url, function(data){
+      console.log(data)
       const src         = getWeatherIcon(data.weather[0].main)
       const tempValue   = Math.floor(data.main.temp)
       const switchInput = document.getElementById('switchInput')
 
-      location.innerHTML = data.name
+      location.innerHTML    = data.name
+      temp.innerHTML        = `${tempValue} &#8451;`
+      description.innerHTML = data.weather[0].description
       weatherIcon.setAttribute('src', src)
-      temp.innerHTML     = `${tempValue} &#8451;`
 
       switchInput.addEventListener('change', function() {
         temp.innerHTML = (switchInput.checked)
@@ -49,7 +52,9 @@
   function getWeatherIcon(weather) {
     weather = weather.toLowerCase()
     const ListIcons = {
-      rain: 'images/rain.svg'
+      rain: 'images/rain.svg',
+      clear: 'images/sunny.svg',
+      cloud: 'images/cloud.svg'
     }
 
     return ListIcons[weather] || 'images/cloud.svg'

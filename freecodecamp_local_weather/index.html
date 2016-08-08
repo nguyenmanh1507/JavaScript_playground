@@ -18,18 +18,21 @@
   </header>
   <div class="row">
     <div class="small-12 column">
-      <p><strong id="location"></strong></p>
+      <p class="w-location" id="location"></p>
       <img src="" id="weatherIcon">
-      <p id="temp"></p>
+      <p class="w-description" id="description"></p>
+      <div class="w-temp-wrap">
+        <p class="w-temp" id="temp"></p>
 
-      <div class="switch">
-        <input class="switch-input" id="switchInput" type="checkbox" name="testGroup">
-        <label class="switch-paddle" for="switchInput">
-          <span class="show-for-sr">Switch to F degree</span>
-        </label>
+        <div class="switch">
+          <input class="switch-input" id="switchInput" type="checkbox" name="testGroup">
+          <label class="switch-paddle" for="switchInput">
+            <span class="show-for-sr">Switch to F degree</span>
+          </label>
+        </div>
+
+        <p class="w-unit">&#8457;</p>
       </div>
-
-      <p>&#8457;</p>
     </div>
   </div>
 

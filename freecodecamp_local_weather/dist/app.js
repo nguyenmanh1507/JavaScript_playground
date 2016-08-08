@@ -10,6 +10,7 @@
   function success(position) {
     var location = document.getElementById('location');
     var weatherIcon = document.getElementById('weatherIcon');
+    var description = document.getElementById('description');
     var temp = document.getElementById('temp');
 
     var latitude = position.coords.latitude;
@@ -24,13 +25,15 @@
     var url = source + params;
 
     $.getJSON(url, function (data) {
+      console.log(data);
       var src = getWeatherIcon(data.weather[0].main);
       var tempValue = Math.floor(data.main.temp);
       var switchInput = document.getElementById('switchInput');
 
       location.innerHTML = data.name;
-      weatherIcon.setAttribute('src', src);
       temp.innerHTML = tempValue + ' &#8451;';
+      description.innerHTML = data.weather[0].description;
+      weatherIcon.setAttribute('src', src);
 
       switchInput.addEventListener('change', function () {
         temp.innerHTML = switchInput.checked ? celsiusToFahrenheit(tempValue) + ' &#8457;' : tempValue + ' &#8451;';
@@ -49,7 +52,9 @@
   function getWeatherIcon(weather) {
     weather = weather.toLowerCase();
     var ListIcons = {
-      rain: 'images/rain.svg'
+      rain: 'images/rain.svg',
+      clear: 'images/sunny.svg',
+      cloud: 'images/cloud.svg'
     };
 
     return ListIcons[weather] || 'images/cloud.svg';

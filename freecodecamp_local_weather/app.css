@@ -14,7 +14,7 @@ h6 {
 }
 
 .site-header {
-  padding: 1rem;
+  padding: 1rem 0;
 
   color: #FFF;
   background: #005DAA;
@@ -22,4 +22,26 @@ h6 {
 
 .site-heading {
   margin: 0;
+}
+
+.w-location {
+  font-size: 3rem;
+}
+
+.w-temp {
+  flex-grow: 1;
+  font-size: 2rem;
+}
+
+.w-description {
+  font-size: 2rem;
+}
+
+.w-temp-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.w-unit {
+  font-size: 2rem;
 }
