@@ -1,9 +1,11 @@
-function getData() {
-  return ['#dddddd', '#ff5512', '#75d709'];
+const fs = require('fs')
+
+function getConfig() {
+  return JSON.parse(fs.readFileSync(process.cwd() + '/config.json').toString())
 }
 
 module.exports = function () {
-  const palette = getData()
+  const palette = getConfig().palette
 
   if (!Array.isArray(palette)) {
     throw new Error('Palette is not an array')
